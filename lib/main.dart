@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:montada_project/task/task2.dart';
-import 'package:montada_project/task_1/login_screen_task_1.dart';
 
 void main() {
+  // SystemChrome.setSystemUIOverlayStyle(
+  //   SystemUiOverlayStyle.light.copyWith(
+  //     statusBarColor: Colors.red,
+  //   ),
+  // );
   runApp(const MyApp());
 }
 
@@ -11,10 +16,15 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       title: 'Montada project',
       debugShowCheckedModeBanner: false,
-      home: Task2(),
+      home: AnnotatedRegion<SystemUiOverlayStyle>(
+        value: SystemUiOverlayStyle.light.copyWith(
+          statusBarColor: Colors.transparent,
+        ),
+        child: const Task2(),
+      ),
     );
   }
 }

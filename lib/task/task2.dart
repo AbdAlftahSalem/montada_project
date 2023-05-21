@@ -10,77 +10,75 @@ class Task2 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.grey.shade200,
-      body: SafeArea(
-        child: Column(
-          children: [
-            Container(
-              decoration: const BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.only(
-                  bottomRight: Radius.circular(24),
-                  bottomLeft: Radius.circular(24),
-                ),
+      body: Column(
+        children: [
+          Container(
+            decoration: const BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.only(
+                bottomRight: Radius.circular(24),
+                bottomLeft: Radius.circular(24),
               ),
-              child: Row(
-                children: [
-                  Expanded(
-                    child: Row(
-                      children: [
-                        const Text(
-                          "18",
-                          style: TextStyle(
-                            fontSize: 24,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                        const SizedBox(width: 12),
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: const [
-                            Text(
-                              "Friday",
-                              style: TextStyle(
-                                fontSize: 16,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                            Text(
-                              "July 2019",
-                              style: TextStyle(
-                                fontSize: 16,
-                                color: Colors.grey,
-                              ),
-                            ),
-                          ],
-                        )
-                      ],
-                    ),
-                  ),
-                  const CircleAvatar(
-                    backgroundImage: NetworkImage(
-                        "https://cdn.pixabay.com/photo/2017/08/01/01/33/beanie-2562646_1280.jpg"),
-                  ),
-                ],
-              ),
-              padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 16),
             ),
-            const SizedBox(height: 24),
-            boxWidget(
-                tasks: ConstList.morningList,
-                title: "In the morning",
-                boxColor: Colors.teal),
-            boxWidget(
-                tasks: ConstList.afterWork,
-                title: "After work",
-                boxColor: Colors.white,
-                borderColor: Colors.grey,
-                colorTitle: Colors.black),
-            boxWidget(
-                tasks: ConstList.goingToBed,
-                title: "Going the bed",
-                boxColor: Colors.purple),
-          ],
-        ),
+            padding: const EdgeInsets.only(top: 32 , left: 16 , right: 16 , bottom: 16),
+            child: Row(
+              children: [
+                Expanded(
+                  child: Row(
+                    children: [
+                      const Text(
+                        "18",
+                        style: TextStyle(
+                          fontSize: 24,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      const SizedBox(width: 12),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: const [
+                          Text(
+                            "Friday",
+                            style: TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          Text(
+                            "July 2019",
+                            style: TextStyle(
+                              fontSize: 16,
+                              color: Colors.grey,
+                            ),
+                          ),
+                        ],
+                      )
+                    ],
+                  ),
+                ),
+                const CircleAvatar(
+                  backgroundImage: NetworkImage(
+                      "https://cdn.pixabay.com/photo/2017/08/01/01/33/beanie-2562646_1280.jpg"),
+                ),
+              ],
+            ),
+          ),
+          const SizedBox(height: 24),
+          boxWidget(
+              tasks: ConstList.morningList,
+              title: "In the morning",
+              boxColor: Colors.teal),
+          boxWidget(
+              tasks: ConstList.afterWork,
+              title: "After work",
+              boxColor: Colors.white,
+              borderColor: Colors.grey,
+              colorTitle: Colors.black),
+          boxWidget(
+              tasks: ConstList.goingToBed,
+              title: "Going the bed",
+              boxColor: Colors.purple),
+        ],
       ),
     );
   }
