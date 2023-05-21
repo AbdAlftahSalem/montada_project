@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:montada_project/task/task2.dart';
 import 'package:montada_project/task_1/login_screen_task_1.dart';
 
 void main() {
@@ -13,7 +14,7 @@ class MyApp extends StatelessWidget {
     return const MaterialApp(
       title: 'Montada project',
       debugShowCheckedModeBanner: false,
-      home: LoginScreenTask1(),
+      home: Task2(),
     );
   }
 }
